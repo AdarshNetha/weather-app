@@ -12,8 +12,8 @@ main{
     flex-direction: column;
 }
 #box{
-    height: 600px;
-    width: 500px;
+    height:500px;
+    width: 400px;
     background-color: antiquewhite;
     display: flex;
     justify-content: center;
@@ -21,13 +21,17 @@ main{
     flex-direction: column;
 }
 
-@media(min-width:200px) and (max-width:800px) 
-{
-    #box{
-        height: 400px;
-        width: 70%;
+@media (max-width: 600px) {
+
+    main h1 {
+        font-size: 1.4rem;
     }
-    h1{
-        font-size: 18px;
+
+    #box {
+        width: 90vw;           /* scales with screen */
+        height: auto;          /* keeps ratio */
+        aspect-ratio: 4 / 5;   /* SAME SHAPE always */
+        padding: 20px;
+        border-radius: 15px;
     }
 }
