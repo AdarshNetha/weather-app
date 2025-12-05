@@ -37,7 +37,7 @@ let weather=async()=>{
     emoji.innerHTML=`☀️`
   }
   type.innerHTML=`${fdata.weather[0].main}`
-  temp.innerHTML=`${fdata.main.temp}`
+  temp.innerHTML=`${fdata.main.temp}F`
   loc.innerHTML=`${fdata.name}`
   date.innerHTML=`${tdate}-${month+1}-${year}`
   if(hours>12){
