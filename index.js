@@ -6,6 +6,7 @@ let date=document.getElementById("date")
 let time= document.getElementById("time")
 let lat=null;
 let long=null;
+let temperature=0;
 let apikey="b448794a4d1ad7244666ae72b7e6350a"
 const now =new Date();
 const tdate=now.getDate();
@@ -26,7 +27,7 @@ let getloc=()=>{
 }
 
 let weather=async()=>{
-  let api=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apikey}`)
+  let api=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apikey}&units=metric`)
   const fdata=await api.json();
   if(fdata.weather[0].main=="Mist"||fdata.weather[0].main=="Haze" || fdata.weather[0].main=="Fog" ||fdata.weather[0].main=="Smoke")
   {
@@ -37,7 +38,7 @@ let weather=async()=>{
     emoji.innerHTML=`☀️`
   }
   type.innerHTML=`${fdata.weather[0].main}`
-  temp.innerHTML=`${fdata.main.temp}F`
+  temp.innerHTML=`${(fdata.main.temp)} C`
   loc.innerHTML=`${fdata.name}`
   date.innerHTML=`${tdate}-${month+1}-${year}`
   if(hours>12){
