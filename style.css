@@ -40,6 +40,11 @@ main{
 #date-time{
     display: flex;
 }
+#note{
+   
+    display: flex;
+
+}
 
 @media (max-width: 600px) {
 
